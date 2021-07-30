@@ -14,11 +14,10 @@ class DockingStation
   def dock(bike)
     fail 'Station is at full capacity' if bikes.length >= 20
     bikes << bike
-    puts bikes.length
   end
 end
 
-docking_station = DockingStation.new
-docking_station.dock(Bike.new)
-docking_station.dock(Bike.new)
+# docking_station = DockingStation.new
+# docking_station.dock(Bike.new)
+# docking_station.dock(Bike.new)
 
