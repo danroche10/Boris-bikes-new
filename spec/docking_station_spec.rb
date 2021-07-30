@@ -37,11 +37,26 @@ describe DockingStation do
     end
   end
 
+  # test 7
   describe '#dock_bike' do
     it "raise error if there are too many bikes" do
       docking_station = DockingStation.new
-      expect { (subject.default_capacity + 1).times { docking_station.dock Bike.new } }.to raise_error "Station is at full capacity"
+      expect { (subject.capacity + 1).times { docking_station.dock Bike.new } }.to raise_error "Station is at full capacity"
     end
   end
 
+
+  describe '#initialize' do
+    #test 8
+    docking_station = DockingStation.new(22)
+    it "allows a user to set capacity for new docking station" do
+      expect { docking_station }.to_not raise_error
+    end
+    
+    # test 9
+    it "ensures a default capacity of 20 is set" do
+      docking_station = DockingStation.new
+      expect(docking_station.instance_variable_get(:@capacity)).to eq 20
+    end
+  end
 end
