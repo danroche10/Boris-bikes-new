@@ -40,7 +40,7 @@ describe DockingStation do
   describe '#dock_bike' do
     it "raise error if there are too many bikes" do
       docking_station = DockingStation.new
-      expect { 21.times { docking_station.dock Bike.new } }.to raise_error "Station is at full capacity"
+      expect { (subject.default_capacity + 1).times { docking_station.dock Bike.new } }.to raise_error "Station is at full capacity"
     end
   end
 
