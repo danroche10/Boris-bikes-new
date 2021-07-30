@@ -22,9 +22,9 @@ describe DockingStation do
 
   # test 5
   it "returns docked bikes" do
-    bike = Bike.new
-    subject.dock(bike)
-    expect(subject.bike).to eq bike
+    dan_bike = Bike.new
+    subject.dock(dan_bike)
+    expect(subject.bike).to eq dan_bike
   end
 
   describe '#release_bike' do
